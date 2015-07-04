@@ -1,0 +1,11 @@
+#!/bin/bash
+export REDIS_URL=redis://localhost:6379/hubot
+export PORT=8081 # setting port for hubot scripts, only needed if port 8080 is not ok with you
+export HUBOT_SLACK_TOKEN=<token here>
+
+export HUBOT_ADAPTER="slack"
+export HUBOT_PATH="/opt/hubot"
+
+cd $HUBOT_PATH && npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+
