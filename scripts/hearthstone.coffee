@@ -35,5 +35,6 @@ showHSCard = (card, msg) ->
   if not card.collectible or not card.img?
     return 0
 
-  msg.send "Found hearthstone card *#{card.name}* #{card.img}"
+  cardClass = card.playerClass ? 'Neutral'
+  msg.send "Found hearthstone card *#{card.name}* _(#{cardClass})_ #{card.img}"
   return 1
