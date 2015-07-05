@@ -5,3 +5,4 @@ start.sh
 hubot.log
 hubot.pid
 .hubotrc
+.idea
