@@ -45,6 +45,7 @@ imageMe = (msg, query, animated, faces, cb) ->
   if googleCseId
     # Using Google Custom Search API
     googleApiKey = process.env.HUBOT_GOOGLE_CSE_KEY
+    googleHost = process.env.HUBOT_GOOGLE_HOST ? 'google.com.vn'
     if !googleApiKey
       msg.robot.logger.error "Missing environment variable HUBOT_GOOGLE_CSE_KEY"
       msg.send "Missing server environment variable HUBOT_GOOGLE_CSE_KEY."
@@ -55,7 +56,8 @@ imageMe = (msg, query, animated, faces, cb) ->
       safe:'high',
       fields:'items(link)',
       cx: googleCseId,
-      key: googleApiKey
+      key: googleApiKey,
+      googlehost: googleHost
     if typeof animated is 'boolean' and animated is true
       q.fileType = 'gif'
       q.hq = 'animated'
@@ -84,7 +86,7 @@ imageMe = (msg, query, animated, faces, cb) ->
           ) error for error in response.error.errors if response.error?.errors
   else
     # Using deprecated Google image search API
-    q = v: '1.0', rsz: '8', q: query, safe: 'active'
+    q = v: '1.0', rsz: '8', q: query, safe: 'active', hl: 'vi'
     q.imgtype = 'animated' if typeof animated is 'boolean' and animated is true
     q.imgtype = 'face' if typeof faces is 'boolean' and faces is true
     msg.http('https://ajax.googleapis.com/ajax/services/search/images')
