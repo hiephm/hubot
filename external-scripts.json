@@ -10,5 +10,6 @@
   "hubot-shipit",
   "hubot-plusplus",
   "hubot-table-flip",
-  "hubot-codinglove"
+  "hubot-codinglove",
+  "hubot-standup-alarm"
 ]
