@@ -21,7 +21,8 @@
     "hubot-slack": "^3.3.0",
     "hubot-table-flip": "^0.1.0",
     "hubot-codinglove": "0.2.6",
-    "hubot-standup-alarm": "*"
+    "hubot-standup-alarm": "*",
+    "hubot-calculator": ">= 0.4.0"
   },
   "engines": {
     "node": "0.10.x"

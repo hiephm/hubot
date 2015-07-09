@@ -11,5 +11,6 @@
   "hubot-plusplus",
   "hubot-table-flip",
   "hubot-codinglove",
-  "hubot-standup-alarm"
+  "hubot-standup-alarm",
+  "hubot-calculator"
 ]
