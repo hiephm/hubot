@@ -35,6 +35,12 @@ showHSCard = (card, msg) ->
   if not card.collectible or not card.img?
     return 0
 
+  cardSet = 'Classic'
+  switch card.cardSet
+    when 'The Grand Tournament' then cardSet = 'TGT'
+    when 'Goblins vs Gnomes' then cardSet = 'GvG'
+    
   cardClass = card.playerClass ? 'Neutral'
-  msg.send "Found hearthstone card *#{card.name}* _(#{cardClass})_ #{card.img}"
+  cardFlavor = if card.flavor then "\nFlavor text: #{card.flavor}" else ''
+  msg.send "Found #{cardSet} card *#{card.name}* _(#{cardClass})_ #{card.img} #{cardFlavor}"
   return 1
