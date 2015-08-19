@@ -41,6 +41,6 @@ showHSCard = (card, msg) ->
     when 'Goblins vs Gnomes' then cardSet = 'GvG'
     
   cardClass = card.playerClass ? 'Neutral'
-  cardFlavor = if card.flavor then "\nFlavor text: #{card.flavor}" else ''
+  cardFlavor = if card.flavor then "\nFlavor text: _#{card.flavor}_" else ''
   msg.send "Found #{cardSet} card *#{card.name}* _(#{cardClass})_ #{card.img} #{cardFlavor}"
   return 1
