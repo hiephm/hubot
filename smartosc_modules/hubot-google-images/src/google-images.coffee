@@ -51,13 +51,14 @@ imageMe = (msg, query, animated, faces, cb) ->
       msg.send "Missing server environment variable HUBOT_GOOGLE_CSE_KEY."
       return
     q =
-      q: query,
-      searchType:'image',
-      safe:'high',
-      fields:'items(link)',
-      cx: googleCseId,
-      key: googleApiKey,
-      googlehost: googleHost
+      q:            query,
+      searchType:   'image',
+      safe:         'off',
+      fields:       'items(link)',
+      cx:           googleCseId,
+      key:          googleApiKey,
+      googlehost:   googleHost,
+      hl:           'vi'
     if typeof animated is 'boolean' and animated is true
       q.fileType = 'gif'
       q.hq = 'animated'
